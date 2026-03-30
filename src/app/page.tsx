@@ -4,22 +4,27 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Post } from "@/lib/types";
 
-export const revalidate = 60;
+export const dynamic = 'force-dynamic';
 
 export default async function HomePage() {
-  const supabase = await createClient();
+  let publishedPosts: Post[] = [];
 
-  const { data: posts, error } = await supabase
-    .from("posts")
-    .select("*")
-    .eq("published", true)
-    .order("created_at", { ascending: false });
+  try {
+    const supabase = await createClient();
+    const { data: posts, error } = await supabase
+      .from("posts")
+      .select("*")
+      .eq("published", true)
+      .order("created_at", { ascending: false });
 
-  if (error) {
-    console.error("Error fetching posts:", error);
+    if (error) {
+      console.error("Error fetching posts:", error);
+    } else {
+      publishedPosts = posts || [];
+    }
+  } catch (err) {
+    console.error("Supabase connection error:", err);
   }
-
-  const publishedPosts: Post[] = posts || [];
 
   return (
     <>
