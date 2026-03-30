@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  direction: rtl;
+}
+
+body {
+  font-family: 'Tajawal', sans-serif;
+  background-color: #F9F6F1;
+  color: #1a1a1a;
+  line-height: 1.8;
+}
+
+/* Prose styles for blog content */
+.blog-content {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 1.2rem;
+  line-height: 2;
+  color: #2D2D2D;
+  direction: rtl;
+  text-align: right;
+}
+
+.blog-content h1,
+.blog-content h2,
+.blog-content h3 {
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+}
+
+.blog-content h1 { font-size: 2rem; }
+.blog-content h2 { font-size: 1.6rem; }
+.blog-content h3 { font-size: 1.3rem; }
+
+.blog-content p {
+  margin-bottom: 1.5rem;
+}
+
+.blog-content img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin: 1.5rem auto;
+  display: block;
+}
+
+.blog-content blockquote {
+  border-right: 4px solid #C5A880;
+  border-left: none;
+  padding-right: 1.5rem;
+  padding-left: 0;
+  margin: 1.5rem 0;
+  color: #555;
+  font-style: italic;
+}
+
+.blog-content ul, .blog-content ol {
+  padding-right: 1.5rem;
+  padding-left: 0;
+  margin-bottom: 1.5rem;
+}
+
+.blog-content li {
+  margin-bottom: 0.5rem;
+}
+
+.blog-content a {
+  color: #8B6914;
+  text-decoration: underline;
+}
+
+/* Tiptap editor styles */
+.tiptap-editor .ProseMirror {
+  direction: rtl;
+  text-align: right;
+  font-family: 'Tajawal', sans-serif;
+  font-size: 1.1rem;
+  line-height: 2;
+  min-height: 400px;
+  padding: 1rem;
+  outline: none;
+}
+
+.tiptap-editor .ProseMirror p {
+  margin-bottom: 1rem;
+}
+
+.tiptap-editor .ProseMirror h1 { font-size: 2rem; font-weight: 700; margin: 1rem 0; }
+.tiptap-editor .ProseMirror h2 { font-size: 1.6rem; font-weight: 700; margin: 1rem 0; }
+.tiptap-editor .ProseMirror h3 { font-size: 1.3rem; font-weight: 700; margin: 1rem 0; }
+
+.tiptap-editor .ProseMirror blockquote {
+  border-right: 4px solid #C5A880;
+  border-left: none;
+  padding-right: 1rem;
+  color: #666;
+}
+
+.tiptap-editor .ProseMirror ul,
+.tiptap-editor .ProseMirror ol {
+  padding-right: 1.5rem;
+  padding-left: 0;
+}
+
+.tiptap-editor .ProseMirror.ProseMirror-focused {
+  outline: none;
+}
